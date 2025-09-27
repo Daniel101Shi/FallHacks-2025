@@ -10,21 +10,27 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "axios": "^1.12.2",
     "@heroui/autocomplete": "^2.3.28",
     "@heroui/react": "^2.3.28",
+    "axios": "^1.12.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "dotenv": "^17.2.2",
+    "lucide-react": "^0.544.0",
+    "motion": "^12.23.22",
     "next": "15.5.4",
     "node-fetch": "^3.3.2",
     "oauth-1.0a": "^2.2.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.4.0"
   }
 }

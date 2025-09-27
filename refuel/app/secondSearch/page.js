@@ -363,181 +363,194 @@ export default function SecondSearchPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,theme(colors.emerald.500/0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,theme(colors.emerald.400/0.08),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[conic-gradient(from_45deg_at_50%_50%,transparent_0deg,theme(colors.emerald.500/0.05)_90deg,transparent_180deg)]" />
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
-
-      <div className="relative flex min-h-screen flex-col items-center justify-start p-6 text-slate-100">
-        <section className="w-full max-w-4xl mt-8">
-          {/* Glowing border effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-400 rounded-2xl blur-lg opacity-25" />
+    <main className="min-h-screen text-slate-100">
+      <div className="flex min-h-screen flex-col items-center justify-start p-6">
+        <section className="w-full max-w-5xl mt-8">
+          {/* Enhanced glowing border effect */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-400 rounded-3xl blur-2xl opacity-15 animate-pulse" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600/50 via-emerald-500/50 to-emerald-400/50 rounded-2xl blur-lg opacity-25" />
           
-          <div className="relative rounded-2xl border border-slate-700/50 bg-slate-900/80 backdrop-blur-xl p-8 shadow-2xl">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent" />
+          <div className="relative rounded-2xl border border-slate-700/60 bg-slate-900/90 backdrop-blur-2xl p-10 shadow-2xl">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/8 via-white/3 to-transparent" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 via-transparent to-emerald-400/5" />
             
             <div className="relative">
-              {/* Header */}
-              <div className="flex items-start justify-between mb-8">
+              {/* Enhanced Header */}
+              <div className="flex items-start justify-between mb-10">
                 <div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent">
+                  <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent mb-4">
                     Choose Your Workout Details
                   </h1>
-                  <p className="mt-3 text-slate-300 leading-relaxed max-w-2xl">
+                  <p className="text-xl text-slate-300 leading-relaxed max-w-3xl font-light">
                     Refine the activity you searched for and add your weight & duration to personalize calorie burn calculations.
                   </p>
                 </div>
                 <Link 
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/50 text-emerald-400 hover:text-emerald-300 hover:bg-slate-800/70 transition-all duration-200 border border-slate-700/50"
+                  className="group inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-800/60 backdrop-blur-sm text-emerald-400 hover:text-emerald-300 hover:bg-slate-800/80 transition-all duration-300 border border-slate-700/60 hover:border-slate-600/80 hover:shadow-lg hover:shadow-emerald-500/10"
                   href="/"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                   Change activity
                 </Link>
               </div>
 
-              {/* Activity Info Card */}
-              <div className="mb-8 p-6 rounded-xl bg-gradient-to-r from-slate-800/30 to-slate-800/10 border border-slate-700/30">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400">Activity from previous step</p>
-                    <p className="text-lg font-semibold text-emerald-300">
-                      {activity || 'Not set'}
-                    </p>
+              {/* Enhanced Activity Info Card */}
+              <div className="mb-10 relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-emerald-400/20 rounded-2xl blur-lg" />
+                <div className="relative p-8 rounded-2xl bg-gradient-to-r from-slate-800/40 to-slate-800/20 border border-slate-700/40 backdrop-blur-sm">
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-emerald-500/30 rounded-full blur-lg" />
+                      <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-400 font-medium">Activity from previous step</p>
+                      <p className="text-2xl font-bold text-emerald-300 mt-1">
+                        {activity || 'Not set'}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Form */}
-              <div className="space-y-8">
+              {/* Enhanced Form */}
+              <div className="space-y-10">
                 {/* Workout Selection */}
-                <div className="space-y-4">
-                  <label className="block text-sm font-semibold text-slate-200">
-                    Exact workout variation
+                <div className="space-y-5">
+                  <label className="block">
+                    <div className="flex items-center gap-2 mb-4">
+                      <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                      <span className="text-sm font-semibold text-slate-200">
+                        Exact workout variation
+                      </span>
+                    </div>
+                    <div className="relative">
+                      <Autocomplete
+                        className="w-full"
+                        placeholder={hasResults ? 'Select the closest match to your workout' : 'Search to load workout options'}
+                        isDisabled={!hasResults}
+                        variant="bordered"
+                        color="success"
+                        classNames={{
+                          base: 'text-slate-100',
+                          label: 'text-slate-200',
+                          mainWrapper: 'bg-slate-950',
+                          inputWrapper: 'rounded-xl bg-slate-950/60 backdrop-blur-sm border border-slate-600/60 data-[hover=true]:border-emerald-500/70 data-[focus=true]:border-emerald-500 data-[focus=true]:ring-4 data-[focus=true]:ring-emerald-500/20 transition-all duration-300 data-[focus=true]:shadow-lg data-[focus=true]:shadow-emerald-500/10',
+                          input: 'text-slate-100 placeholder:text-slate-400 text-base p-4',
+                          listboxWrapper: 'bg-slate-900 rounded-xl',
+                          listbox: 'bg-slate-900 text-slate-100',
+                          popoverContent: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl',
+                        }}
+                        listboxProps={{ className: 'bg-slate-900 text-slate-100' }}
+                        popoverProps={{ className: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl' }}
+                        selectedKey={selectedKey ?? undefined}
+                        onSelectionChange={(key) => {
+                          if (key == null) {
+                            setSelectedKey(null);
+                          } else {
+                            setSelectedKey(String(key));
+                          }
+                        }}
+                        allowsCustomValue={false}
+                        defaultItems={workoutOptions}
+                      >
+                        {(item) => (
+                          <AutocompleteItem
+                            key={item.key}
+                            textValue={item.label}
+                            className="bg-slate-900 text-slate-100 data-[hover=true]:bg-emerald-500/20 rounded-lg transition-colors duration-200"
+                          >
+                            <div className="flex flex-col py-2">
+                              <span className="font-medium text-base">{item.label}</span>
+                              {item.description && (
+                                <span className="text-sm text-slate-400 mt-1">{item.description}</span>
+                              )}
+                            </div>
+                          </AutocompleteItem>
+                        )}
+                      </Autocomplete>
+                      <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent opacity-0 transition-opacity duration-300 focus-within:opacity-100" />
+                    </div>
                   </label>
-                  <div className="relative">
-                    <Autocomplete
-                      className="w-full"
-                      placeholder={hasResults ? 'Select the closest match to your workout' : 'Search to load workout options'}
-                      isDisabled={!hasResults}
-                      variant="bordered"
-                      color="success"
-                      classNames={{
-                        base: 'text-slate-100',
-                        label: 'text-slate-200',
-                        mainWrapper: 'bg-slate-950',
-                        inputWrapper: 'rounded-xl bg-slate-950/50 backdrop-blur-sm border border-slate-600/50 data-[hover=true]:border-emerald-500/70 data-[focus=true]:border-emerald-500 data-[focus=true]:ring-2 data-[focus=true]:ring-emerald-500/20 transition-all duration-200',
-                        input: 'text-slate-100 placeholder:text-slate-400',
-                        listboxWrapper: 'bg-slate-900 rounded-xl',
-                        listbox: 'bg-slate-900 text-slate-100',
-                        popoverContent: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl',
-                      }}
-                      listboxProps={{ className: 'bg-slate-900 text-slate-100' }}
-                      popoverProps={{ className: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl' }}
-                      selectedKey={selectedKey ?? undefined}
-                      onSelectionChange={(key) => {
-                        if (key == null) {
-                          setSelectedKey(null);
-                        } else {
-                          setSelectedKey(String(key));
-                        }
-                      }}
-                      allowsCustomValue={false}
-                      defaultItems={workoutOptions}
-                    >
-                      {(item) => (
-                        <AutocompleteItem
-                          key={item.key}
-                          textValue={item.label}
-                          className="bg-slate-900 text-slate-100 data-[hover=true]:bg-emerald-500/20 rounded-lg"
-                        >
-                          <div className="flex flex-col py-1">
-                            <span className="font-medium">{item.label}</span>
-                            {item.description && (
-                              <span className="text-xs text-slate-400">{item.description}</span>
-                            )}
-                          </div>
-                        </AutocompleteItem>
-                      )}
-                    </Autocomplete>
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 transition-opacity focus-within:opacity-100" />
-                  </div>
                 </div>
 
-                {/* Weight and Duration Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Enhanced Weight and Duration Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600/20 to-emerald-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-                    <div className="relative rounded-xl border border-slate-700/50 bg-slate-950/50 backdrop-blur-sm p-6 transition-all duration-200 group-hover:border-slate-600/70">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                          </svg>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600/20 to-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur" />
+                    <div className="relative rounded-2xl border border-slate-700/60 bg-slate-950/60 backdrop-blur-sm p-8 transition-all duration-300 group-hover:border-slate-600/80 group-hover:shadow-lg group-hover:shadow-emerald-500/10">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-emerald-500/20 rounded-xl blur-md" />
+                          <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/30 to-emerald-400/30 flex items-center justify-center border border-emerald-500/30">
+                            <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                          </div>
                         </div>
-                        <h3 className="font-semibold text-slate-100">Weight</h3>
+                        <h3 className="text-lg font-semibold text-slate-100">Weight</h3>
                       </div>
-                      <p className="text-2xl font-bold text-emerald-300">
+                      <p className="text-3xl font-bold text-emerald-300 mb-2">
                         {weight ? `${weight} lbs` : 'Not set'}
                       </p>
                       {!weight && (
-                        <p className="text-sm text-slate-400 mt-1">Go back to update</p>
+                        <p className="text-sm text-slate-400">Go back to update</p>
                       )}
                     </div>
                   </div>
 
                   <div className="relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600/20 to-emerald-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-                    <div className="relative rounded-xl border border-slate-700/50 bg-slate-950/50 backdrop-blur-sm p-6 transition-all duration-200 group-hover:border-slate-600/70">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600/20 to-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur" />
+                    <div className="relative rounded-2xl border border-slate-700/60 bg-slate-950/60 backdrop-blur-sm p-8 transition-all duration-300 group-hover:border-slate-600/80 group-hover:shadow-lg group-hover:shadow-emerald-500/10">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-emerald-500/20 rounded-xl blur-md" />
+                          <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/30 to-emerald-400/30 flex items-center justify-center border border-emerald-500/30">
+                            <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
                         </div>
-                        <h3 className="font-semibold text-slate-100">Duration</h3>
+                        <h3 className="text-lg font-semibold text-slate-100">Duration</h3>
                       </div>
-                      <p className="text-2xl font-bold text-emerald-300">
+                      <p className="text-3xl font-bold text-emerald-300 mb-2">
                         {duration ? `${duration} min` : 'Not set'}
                       </p>
                       {!duration && (
-                        <p className="text-sm text-slate-400 mt-1">Go back to update</p>
+                        <p className="text-sm text-slate-400">Go back to update</p>
                       )}
                     </div>
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                {/* Enhanced Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-6">
                   <button
-                    className="group relative overflow-hidden rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-200 hover:bg-slate-700/50 hover:border-slate-500/70 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                    className="group relative overflow-hidden rounded-xl bg-slate-800/60 backdrop-blur-sm border border-slate-600/60 px-8 py-4 text-base font-semibold text-slate-200 transition-all duration-300 hover:bg-slate-700/60 hover:border-slate-500/80 hover:text-white hover:shadow-lg hover:shadow-slate-900/20 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-slate-800/60 disabled:hover:border-slate-600/60"
                     disabled={loading || !activity.trim() || !weight || !duration}
                     onClick={handleSearch}
                     type="button"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <span className="relative flex items-center justify-center gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <span className="relative flex items-center justify-center gap-3">
                       {loading ? (
                         <>
-                          <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                           </svg>
                           Refreshing…
                         </>
                       ) : (
                         <>
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                           </svg>
                           Refresh workout options
@@ -547,23 +560,24 @@ export default function SecondSearchPage() {
                   </button>
 
                   <button
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:from-emerald-500 hover:to-emerald-400 hover:shadow-xl hover:shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
+                    className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-400 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-emerald-500/30 transition-all duration-300 hover:from-emerald-500 hover:via-emerald-400 hover:to-teal-400 hover:shadow-3xl hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 disabled:shadow-emerald-500/20 focus:outline-none focus:ring-4 focus:ring-emerald-500/50"
                     disabled={mealLoading || loading || !selectedWorkout || !weight || !duration}
                     onClick={handleFindMeals}
                     type="button"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <span className="relative flex items-center justify-center gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <span className="relative flex items-center justify-center gap-3">
                       {mealLoading ? (
                         <>
-                          <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                           </svg>
                           Finding meals…
                         </>
                       ) : (
                         <>
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
                           </svg>
                           Find meal matches
@@ -573,13 +587,13 @@ export default function SecondSearchPage() {
                   </button>
                 </div>
 
-                {/* Status Messages */}
+                {/* Enhanced Status Messages */}
                 {error && (
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-red-500/20 rounded-xl blur" />
-                    <div className="relative rounded-xl border border-red-500/30 bg-red-500/10 backdrop-blur-sm p-4">
-                      <p className="text-sm text-red-300 flex items-center gap-2">
-                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative animate-in slide-in-from-top duration-300">
+                    <div className="absolute -inset-1 bg-red-500/30 rounded-2xl blur-lg" />
+                    <div className="relative rounded-2xl border border-red-500/40 bg-red-500/10 backdrop-blur-sm p-6">
+                      <p className="text-base text-red-300 flex items-center gap-3">
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         {error}
@@ -589,11 +603,11 @@ export default function SecondSearchPage() {
                 )}
 
                 {status && !error && (
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-emerald-500/20 rounded-xl blur" />
-                    <div className="relative rounded-xl border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-sm p-4">
-                      <p className="text-sm text-emerald-300 flex items-center gap-2">
-                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative animate-in slide-in-from-top duration-300">
+                    <div className="absolute -inset-1 bg-emerald-500/30 rounded-2xl blur-lg" />
+                    <div className="relative rounded-2xl border border-emerald-500/40 bg-emerald-500/10 backdrop-blur-sm p-6">
+                      <p className="text-base text-emerald-300 flex items-center gap-3">
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         {status}
@@ -603,11 +617,11 @@ export default function SecondSearchPage() {
                 )}
 
                 {mealError && (
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-red-500/20 rounded-xl blur" />
-                    <div className="relative rounded-xl border border-red-500/30 bg-red-500/10 backdrop-blur-sm p-4">
-                      <p className="text-sm text-red-300 flex items-center gap-2">
-                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative animate-in slide-in-from-top duration-300">
+                    <div className="absolute -inset-1 bg-red-500/30 rounded-2xl blur-lg" />
+                    <div className="relative rounded-2xl border border-red-500/40 bg-red-500/10 backdrop-blur-sm p-6">
+                      <p className="text-base text-red-300 flex items-center gap-3">
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         {mealError}
@@ -617,11 +631,11 @@ export default function SecondSearchPage() {
                 )}
 
                 {mealStatus && !mealError && (
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-emerald-500/20 rounded-xl blur" />
-                    <div className="relative rounded-xl border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-sm p-4">
-                      <p className="text-sm text-emerald-300 flex items-center gap-2">
-                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative animate-in slide-in-from-top duration-300">
+                    <div className="absolute -inset-1 bg-emerald-500/30 rounded-2xl blur-lg" />
+                    <div className="relative rounded-2xl border border-emerald-500/40 bg-emerald-500/10 backdrop-blur-sm p-6">
+                      <p className="text-base text-emerald-300 flex items-center gap-3">
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         {mealStatus}
@@ -630,38 +644,48 @@ export default function SecondSearchPage() {
                   </div>
                 )}
 
-                {/* Meal Results */}
+                {/* Enhanced Meal Results */}
                 {mealResults.length > 0 && (
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-slate-100 flex items-center gap-2">
-                      <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
-                      </svg>
-                      Meal Matches
-                    </h3>
-                    <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-6 animate-in fade-in-50 duration-500">
+                    <div className="flex items-center gap-3">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-emerald-500/30 rounded-lg blur-lg" />
+                        <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-400 flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                          </svg>
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-100">Meal Matches</h3>
+                    </div>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {mealResults.map((meal, index) => (
                         <div
                           className="group relative"
                           key={`${meal.food_id ?? 'food'}-${index}`}
                         >
-                          <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600/20 to-emerald-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-                          <div className="relative rounded-xl border border-slate-700/50 bg-slate-950/30 backdrop-blur-sm p-6 transition-all duration-200 group-hover:border-slate-600/70">
-                            <h4 className="text-lg font-semibold text-slate-100 mb-2">{meal.name}</h4>
-                            <div className="space-y-2">
-                              <p className="text-sm text-slate-300 flex items-center gap-2">
+                          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600/20 to-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur" />
+                          <div className="relative rounded-2xl border border-slate-700/60 bg-slate-950/40 backdrop-blur-sm p-8 transition-all duration-300 group-hover:border-slate-600/80 group-hover:shadow-lg group-hover:shadow-emerald-500/10 group-hover:-translate-y-1">
+                            <h4 className="text-xl font-bold text-slate-100 mb-4 group-hover:text-emerald-200 transition-colors duration-300">{meal.name}</h4>
+                            <div className="space-y-3">
+                              <p className="text-sm text-slate-300 flex items-center gap-3">
                                 <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                                 {meal.kcal_per_100 ? `${meal.kcal_per_100} calories / 100g` : 'Calories vary by serving'}
                               </p>
                               {meal.estimated_calories && (
-                                <p className="text-sm text-emerald-400 flex items-center gap-2">
-                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                                  Suggested portion ≈ {meal.suggested_portion_grams ? `${meal.suggested_portion_grams}g` : `${meal.suggested_servings} servings`} ({meal.estimated_calories} calories)
-                                </p>
+                                <div className="relative">
+                                  <div className="absolute -inset-1 bg-emerald-500/10 rounded-lg blur" />
+                                  <div className="relative p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+                                    <p className="text-sm text-emerald-300 flex items-center gap-3 font-medium">
+                                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                      </svg>
+                                      Suggested portion ≈ {meal.suggested_portion_grams ? `${meal.suggested_portion_grams}g` : `${meal.suggested_servings} servings`} ({meal.estimated_calories} calories)
+                                    </p>
+                                  </div>
+                                </div>
                               )}
                             </div>
                           </div>
