@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-const activity = process.argv[2] || "running"; // default to running
+const activity = process.argv[2];
 const url = `https://api.api-ninjas.com/v1/caloriesburned?activity=${encodeURIComponent(activity)}&weight=160&duration=30`;
 
 const apiKey = process.env.API_NINJAS_KEY 
