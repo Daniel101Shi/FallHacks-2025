@@ -10,12 +10,9 @@
     "lint": "eslint"
   },
   "dependencies": {
-      test
     "axios": "^1.12.2",
-    "crypto": "^1.0.1",
-
     "@heroui/autocomplete": "^2.3.28",
-      home
+    "@heroui/react": "^2.3.28",
     "dotenv": "^17.2.2",
     "next": "15.5.4",
     "node-fetch": "^3.3.2",

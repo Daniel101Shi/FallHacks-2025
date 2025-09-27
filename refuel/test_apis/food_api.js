@@ -3,6 +3,8 @@ import 'dotenv/config';
 import axios from 'axios';
 import OAuth from 'oauth-1.0a';
 import crypto from 'crypto';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const CONSUMER_KEY = process.env.FATSECRET_CONSUMER_KEY;
 const CONSUMER_SECRET = process.env.FATSECRET_CONSUMER_SECRET;
@@ -107,19 +109,53 @@ async function topFoodsByCalories(targetCalories, queries) {
   return top;
 }
 
-// CLI: node food_api.js 500 "chicken,beef,orange"
-(async () => {
-  const target = Number(process.argv[2] || '500');
-  const queries = (process.argv[3] || '')
-    .split(',')
-    .map(s => s.trim())
-    .filter(Boolean);
+function withPortionSuggestion(item, target) {
+  if (!Number.isFinite(item?.kcal_per_100) || item.kcal_per_100 <= 0) {
+    return { ...item };
+  }
 
+  const grams = Math.max(1, Math.round((target / item.kcal_per_100) * 100));
+  const estimated = Math.round((item.kcal_per_100 / 100) * grams);
+
+  return {
+    ...item,
+    suggested_portion_grams: grams,
+    estimated_calories: estimated,
+  };
+}
+
+async function findFoodsByCalories(targetCalories, queries) {
+  const base = await topFoodsByCalories(targetCalories, queries);
+  return base.map((item) => withPortionSuggestion(item, targetCalories));
+}
+
+export { topFoodsByCalories, findFoodsByCalories };
+
+// CLI: node food_api.js 500 "chicken,beef,orange"
+const isDirectExecution = (() => {
   try {
-    const top = await topFoodsByCalories(target, queries);
-    console.log(JSON.stringify({ targetCalories: target, results: top }, null, 2));
-  } catch (err) {
-    console.error('Error:', err.response?.data || err.message);
-    process.exit(1);
+    const current = fileURLToPath(import.meta.url);
+    const entry = process.argv[1] ? path.resolve(process.argv[1]) : null;
+    return entry && current === entry;
+  } catch (error) {
+    return false;
   }
 })();
+
+if (isDirectExecution) {
+  (async () => {
+    const target = Number(process.argv[2] || '500');
+    const queries = (process.argv[3] || '')
+      .split(',')
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    try {
+      const top = await topFoodsByCalories(target, queries);
+      console.log(JSON.stringify({ targetCalories: target, results: top }, null, 2));
+    } catch (err) {
+      console.error('Error:', err.response?.data || err.message);
+      process.exit(1);
+    }
+  })();
+}
