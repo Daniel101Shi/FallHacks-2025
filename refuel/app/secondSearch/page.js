@@ -432,7 +432,7 @@ export default function SecondSearchPage() {
                         Exact workout variation
                       </span>
                     </div>
-                    <div className="relative">
+                    <div className="relative group">
                       <Autocomplete
                         className="w-full"
                         placeholder={hasResults ? 'Select the closest match to your workout' : 'Search to load workout options'}
@@ -443,14 +443,29 @@ export default function SecondSearchPage() {
                           base: 'text-slate-100',
                           label: 'text-slate-200',
                           mainWrapper: 'bg-slate-950',
-                          inputWrapper: 'rounded-xl bg-slate-950/60 backdrop-blur-sm border border-slate-600/60 data-[hover=true]:border-emerald-500/70 data-[focus=true]:border-emerald-500 data-[focus=true]:ring-4 data-[focus=true]:ring-emerald-500/20 transition-all duration-300 data-[focus=true]:shadow-lg data-[focus=true]:shadow-emerald-500/10',
-                          input: 'text-slate-100 placeholder:text-slate-400 text-base p-4',
-                          listboxWrapper: 'bg-slate-900 rounded-xl',
+                          inputWrapper:
+                            'rounded-xl bg-slate-950/60 backdrop-blur-sm border border-slate-600/60 data-[hover=true]:border-emerald-500/70 data-[focus=true]:border-emerald-500 data-[focus=true]:ring-4 data-[focus=true]:ring-emerald-500/20 transition-all duration-300 data-[focus=true]:shadow-lg data-[focus=true]:shadow-emerald-500/10 pl-12 pr-14 cursor-pointer data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-70',
+                          input: 'text-slate-100 placeholder:text-slate-400 text-base px-3 py-4',
+                          listboxWrapper: 'bg-slate-900 rounded-xl max-h-72 overflow-y-auto overscroll-contain',
                           listbox: 'bg-slate-900 text-slate-100',
                           popoverContent: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl',
                         }}
-                        listboxProps={{ className: 'bg-slate-900 text-slate-100' }}
-                        popoverProps={{ className: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl' }}
+                        listboxProps={{ className: 'bg-slate-900 text-slate-100 max-h-72 overflow-y-auto overscroll-contain' }}
+                        popoverProps={{ className: 'bg-slate-900 text-slate-100 border border-slate-700/50 rounded-xl backdrop-blur-xl max-h-80 overflow-y-auto overscroll-contain' }}
+                        startContent={
+                          <span className="flex h-full items-center justify-center text-emerald-300">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                            </svg>
+                          </span>
+                        }
+                        endContent={
+                          <span className="flex h-full items-center justify-center text-emerald-300 transition-transform duration-300 transform group-focus-within:rotate-180">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </span>
+                        }
                         selectedKey={selectedKey ?? undefined}
                         onSelectionChange={(key) => {
                           if (key == null) {
@@ -478,6 +493,12 @@ export default function SecondSearchPage() {
                         )}
                       </Autocomplete>
                       <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent opacity-0 transition-opacity duration-300 focus-within:opacity-100" />
+                      <div className="mt-2 flex items-center gap-2 text-xs font-medium text-emerald-300/80">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
+                        </svg>
+                        <span>Open the dropdown to pick the best match.</span>
+                      </div>
                     </div>
                   </label>
                 </div>
